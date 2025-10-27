@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Design Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f3ef;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 100;
+            background: transparent;
+        }
+
+        nav a {
+            color: #e94e3d;
+            text-decoration: none;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            transition: transform 0.3s;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 50px;
+            position: relative;
+        }
+
+        .icon {
+            position: absolute;
+            left: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 120px;
+            height: 120px;
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border: 4px solid #e94e3d;
+            border-radius: 50%;
+            position: absolute;
+            background: transparent;
+        }
+
+        .icon-circle:first-child {
+            top: 0;
+            left: 0;
+        }
+
+        .icon-circle:last-child {
+            bottom: 0;
+            right: 0;
+        }
+
+        .icon-dot {
+            width: 20px;
+            height: 20px;
+            background: #e94e3d;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .dot1 { top: 15px; left: 25px; }
+        .dot2 { top: 25px; left: 35px; }
+        .dot3 { bottom: 35px; right: 25px; }
+        .dot4 { bottom: 25px; right: 35px; }
+
+        .text-container {
+            position: relative;
+            max-width: 900px;
+            margin-left: 200px;
+        }
+
+        .main-text {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 0.9;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .word {
+            display: inline-block;
+            transform-origin: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .word:nth-child(1) { animation-delay: 0s; }
+        .word:nth-child(2) { animation-delay: 0.2s; }
+        .word:nth-child(3) { animation-delay: 0.4s; }
+        .word:nth-child(4) { animation-delay: 0.6s; }
+        .word:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+
+        .rotate-1 { transform: rotate(-8deg); }
+        .rotate-2 { transform: rotate(5deg); }
+        .rotate-3 { transform: rotate(-3deg); }
+        .rotate-4 { transform: rotate(7deg); }
+        .rotate-5 { transform: rotate(-5deg); }
+        .rotate-6 { transform: rotate(4deg); }
+
+        .new-badge {
+            position: absolute;
+            right: -100px;
+            top: 30%;
+            width: 100px;
+            height: 100px;
+            background: transparent;
+            border: 4px solid #e94e3d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .new-badge span {
+            color: #e94e3d;
+            font-weight: 900;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(10deg); }
+        }
+
+        .design-label {
+            position: absolute;
+            right: -150px;
+            top: 50%;
+            font-size: 48px;
+            font-weight: 900;
+            color: #1a1a1a;
+            writing-mode: vertical-rl;
+            letter-spacing: 4px;
+        }
+
+        .vertical-text {
+            position: absolute;
+            left: -80px;
+            top: 20%;
+            font-size: 52px;
+            font-weight: 900;
+            color: #1a1a1a;
+            writing-mode: vertical-rl;
+            letter-spacing: 4px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px;
+            }
+
+            nav a {
+                font-size: 20px;
+            }
+
+            .hero {
+                padding: 50px 20px;
+            }
+
+            .icon {
+                display: none;
+            }
+
+            .text-container {
+                margin-left: 0;
+            }
+
+            .main-text {
+                font-size: 36px;
+            }
+
+            .new-badge,
+            .design-label,
+            .vertical-text {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#new">NEW</a>
+        <a href="#work">WORK</a>
+        <a href="#about">ABOUT</a>
+        <a href="#store">STORE</a>
+    </nav>
+
+    <section class="hero">
+        <div class="icon">
+            <div class="icon-circle">
+                <div class="icon-dot dot1"></div>
+                <div class="icon-dot dot2"></div>
+            </div>
+            <div class="icon-circle">
+                <div class="icon-dot dot3"></div>
+                <div class="icon-dot dot4"></div>
+            </div>
+        </div>
+
+        <div class="vertical-text">AND</div>
+
+        <div class="text-container">
+            <div class="main-text">
+                <span class="word rotate-1">COMPANY</span><br>
+                <span class="word rotate-2">CREATES</span> <span class="word rotate-3">THE</span><br>
+                <span class="word rotate-4">MOST</span><br>
+                <span class="word rotate-5">DELIGHTING</span><br>
+                <span class="word rotate-6">SYSTEM</span><br>
+                <span class="word rotate-1">MARKETING</span><br>
+                <span class="word rotate-2">PREVAILING</span><br>
+                <span class="word rotate-3">AUDIENCES</span>
+            </div>
+
+            <div class="new-badge">
+                <span>NEW</span>
+            </div>
+
+            <div class="design-label">DESIGN</div>
+        </div>
+    </section>
+
+    <!-- p5.js 라이브러리 추가 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    
+    <script>
+        const words = document.querySelectorAll('.word');
+        
+        words.forEach((word, index) => {
+            word.style.animationDelay = `${index * 0.1}s`;
+            
+            word.addEventListener('mouseenter', function() {
+                this.style.color = '#e94e3d';
+                this.style.transform = `scale(1.1) rotate(${Math.random() * 20 - 10}deg)`;
+            });
+            
+            word.addEventListener('mouseleave', function() {
+                this.style.color = '#1a1a1a';
+                this.style.transform = '';
+            });
+        });
+
+        // p5.js 파티클 시스템
+        let particles = [];
+        let frameWidth = 300;
+        let frameHeight = 200;
+        let frameX, frameY;
+        // p5.js의 mouseX, mouseY 변수 사용
+
+        function setup() {
+            let canvas = createCanvas(windowWidth, windowHeight);
+            canvas.position(0, 0);
+            canvas.style('z-index', '10');
+            canvas.style('pointer-events', 'none');
+            
+            // 프레임 위치 설정 (화면 중앙)
+            frameX = width / 2 - frameWidth / 2;
+            frameY = height / 2 - frameHeight / 2;
+            
+            // 초기 파티클 생성
+            for (let i = 0; i < 50; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function draw() {
+            clear();
+            
+            // 썸네일 프레임 그리기
+            drawThumbnailFrame();
+            
+            // 파티클 업데이트 및 그리기
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update();
+                particles[i].display();
+                
+                // 프레임 밖으로 나간 파티클 제거
+                if (particles[i].isOutOfBounds()) {
+                    particles.splice(i, 1);
+                }
+            }
+            
+            // 파티클 개수 유지
+            if (particles.length < 50) {
+                particles.push(new Particle());
+            }
+        }
+
+        function drawThumbnailFrame() {
+            push();
+            
+            // 외부 프레임 (더 두꺼운 테두리)
+            stroke(233, 78, 61); // #e94e3d
+            strokeWeight(8);
+            noFill();
+            rect(frameX - 10, frameY - 10, frameWidth + 20, frameHeight + 20, 15);
+            
+            // 내부 프레임 (얇은 테두리)
+            stroke(233, 78, 61);
+            strokeWeight(3);
+            rect(frameX, frameY, frameWidth, frameHeight, 10);
+            
+            // 모서리 장식
+            stroke(233, 78, 61);
+            strokeWeight(4);
+            let cornerSize = 20;
+            
+            // 좌상단 모서리
+            line(frameX - 5, frameY - 5, frameX - 5 + cornerSize, frameY - 5);
+            line(frameX - 5, frameY - 5, frameX - 5, frameY - 5 + cornerSize);
+            
+            // 우상단 모서리
+            line(frameX + frameWidth + 5, frameY - 5, frameX + frameWidth + 5 - cornerSize, frameY - 5);
+            line(frameX + frameWidth + 5, frameY - 5, frameX + frameWidth + 5, frameY - 5 + cornerSize);
+            
+            // 좌하단 모서리
+            line(frameX - 5, frameY + frameHeight + 5, frameX - 5 + cornerSize, frameY + frameHeight + 5);
+            line(frameX - 5, frameY + frameHeight + 5, frameX - 5, frameY + frameHeight + 5 - cornerSize);
+            
+            // 우하단 모서리
+            line(frameX + frameWidth + 5, frameY + frameHeight + 5, frameX + frameWidth + 5 - cornerSize, frameY + frameHeight + 5);
+            line(frameX + frameWidth + 5, frameY + frameHeight + 5, frameX + frameWidth + 5, frameY + frameHeight + 5 - cornerSize);
+            
+            pop();
+        }
+
+        class Particle {
+            constructor() {
+                this.x = random(frameX + 20, frameX + frameWidth - 20);
+                this.y = random(frameY + 20, frameY + frameHeight - 20);
+                this.vx = random(-2, 2);
+                this.vy = random(-2, 2);
+                this.size = random(3, 8);
+                this.color = color(233, 78, 61, random(100, 255));
+                this.life = 255;
+                this.maxLife = 255;
+            }
+
+            update() {
+                // 마우스와의 거리 계산
+                let mouseDist = dist(this.x, this.y, mouseX, mouseY);
+                
+                // 마우스 근처에서 반발력 적용
+                if (mouseDist < 100) {
+                    let angle = atan2(this.y - mouseY, this.x - mouseX);
+                    let force = map(mouseDist, 0, 100, 3, 0);
+                    this.vx += cos(angle) * force;
+                    this.vy += sin(angle) * force;
+                }
+                
+                // 속도 제한
+                this.vx = constrain(this.vx, -4, 4);
+                this.vy = constrain(this.vy, -4, 4);
+                
+                // 위치 업데이트
+                this.x += this.vx;
+                this.y += this.vy;
+                
+                // 프레임 경계에서 반사
+                if (this.x <= frameX + 10 || this.x >= frameX + frameWidth - 10) {
+                    this.vx *= -1;
+                    this.x = constrain(this.x, frameX + 10, frameX + frameWidth - 10);
+                }
+                if (this.y <= frameY + 10 || this.y >= frameY + frameHeight - 10) {
+                    this.vy *= -1;
+                    this.y = constrain(this.y, frameY + 10, frameY + frameHeight - 10);
+                }
+                
+                // 수명 감소
+                this.life -= 0.5;
+                this.color.setAlpha(this.life);
+            }
+
+            display() {
+                push();
+                fill(this.color);
+                noStroke();
+                ellipse(this.x, this.y, this.size);
+                
+                // 글로우 효과
+                drawingContext.shadowColor = color(233, 78, 61);
+                drawingContext.shadowBlur = 10;
+                ellipse(this.x, this.y, this.size * 0.5);
+                pop();
+            }
+
+            isOutOfBounds() {
+                return this.life <= 0;
+            }
+        }
+
+        // p5.js의 mouseX, mouseY는 자동으로 업데이트되므로 별도 함수 불필요
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+            frameX = width / 2 - frameWidth / 2;
+            frameY = height / 2 - frameHeight / 2;
+        }
+    </script>
+</body>
+</html>
